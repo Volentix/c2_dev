@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 408 408">
+  <g id="vtx">
+    <circle cx="387" cy="99" r="9" fill="#fff"/>
+  </g>
+  <g id="vchain">
+    <circle cx="387" cy="310" r="9" fill="#fff"/>
+  </g>
+  <g id="vespucci">
+    <circle cx="20" cy="310" r="9" fill="#fff"/>
+  </g>
+  <g id="vdex">
+    <circle cx="20" cy="99" r="9" fill="#fff"/>
+  </g>
+  <g id="circle-2" data-name="circle">
+    <path d="M8,204a194.8,194.8,0,0,1,15.4-76.3q3.4-8.1,7.5-15.7h-9a204.3,204.3,0,0,0,1,186H32A195.1,195.1,0,0,1,8,204Z" fill="#fff"/>
+    <path d="M342.6,342.6A196.1,196.1,0,0,1,36.8,306.3l-4.7,7.6a204,204,0,0,0,343.1,1l-4.5-7.8A196.2,196.2,0,0,1,342.6,342.6Z" fill="#fff"/>
+    <path d="M204,0A203.8,203.8,0,0,0,32.1,94.1l5.1,6.8a196.1,196.1,0,0,1,333.8.4l4.6-7.7A203.8,203.8,0,0,0,204,0Z" fill="#fff"/>
+    <path d="M386.1,112h-9q4.1,7.7,7.5,15.7A195.8,195.8,0,0,1,376,298h9.1a204.3,204.3,0,0,0,1-186Z" fill="#fff"/>
+  </g>
+  <path id="left" d="M31,298a196.5,196.5,0,0,1-8.6-170.3q3.4-8.1,7.5-15.7" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
+  <path id="bottom" d="M370.7,308.2a196.1,196.1,0,0,1-333.9-.8" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
+  <path id="top" d="M37.2,100a196.1,196.1,0,0,1,333.8.4" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
+  <path id="right" d="M378.1,112q4.1,7.7,7.5,15.7A195.8,195.8,0,0,1,377,298" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
+</svg>
