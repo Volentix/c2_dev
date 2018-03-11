@@ -21,6 +21,7 @@ $(function(){
 
       $('.nodes').removeClass('active').css('fill', '#ffffff');
       $($node).toggleClass('active');
+      $($node).find('a').hide();
 
       function typeWriter(el, text, n) {
         if (n < (text.length)) {
@@ -28,7 +29,11 @@ $(function(){
           n++;
           setTimeout(function() {
             typeWriter(el, text, n)
-          }, 25);
+          }, 10);
+        } else {
+          setTimeout(function() {
+            $($node).find('.read-more').show().css('opacity', '1');
+          }, 50);
         }
       }
 
@@ -88,7 +93,7 @@ var windowHalfY = window.innerHeight / 2;
 
 init();
 animate();
-updatePlane();
+// updatePlane();
 
 function init() {
   container = document.getElementById('volentix-bg');
@@ -120,14 +125,15 @@ function init() {
 
   // earth
 	var loader = new THREE.TextureLoader();
-	loader.load( 'textures/land_ocean_ice_cloud_2048.jpg', function ( texture ) {
+	loader.load( 'textures/land_ocean_ice_cloud_2048.png', function ( texture ) {
 		var geometry = new THREE.SphereGeometry( 600, 20, 20 );
 		var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
 		var mesh = new THREE.Mesh( geometry, material );
 		planet1.add( mesh );
 	} );
 
-  renderer = new THREE.CanvasRenderer();
+  renderer = new THREE.WebGLRenderer( { alpha: true } );
+  renderer.setClearColor( 0x000000, 0 ); // the default
   renderer.setPixelRatio( window.devicePixelRatio );
   renderer.setSize( window.innerWidth, window.innerHeight );
   container.appendChild( renderer.domElement );
@@ -176,13 +182,14 @@ function render() {
   //   }
   // }
 
-  planet1.position.z = -2000;
-  planet1.position.x = 500;
+  planet1.position.z = -1000;
+  planet1.position.x = 1000;
+  planet1.position.y = -600;
 
   scene.traverse( function( planet1 ) {
 		if ( planet1.isMesh === true ) {
 			planet1.rotation.x -= 0.0001;
-			planet1.rotation.y -= 0.0004;
+			planet1.rotation.y -= 0.0001;
 		}
 	} );
   renderer.render( scene, camera );
