@@ -15,28 +15,73 @@ a {
 }
 img {
   max-width: 100%;
-  width: 100%;
 }
 .red {
   color: red;
 }
-
+.inline-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.inline-list li {
+  display: inline-block;
+}
+.fullscreen header {
+  flex: 0 0 auto;
+}
+.fullscreen main {
+  flex: 1 0 auto;
+  position: relative;
+}
+#main-header {
+  padding-top: 60px;
+  width:100%;
+  display:-moz-box; /* Firefox */
+  display:-webkit-box; /* Safari and Chrome */
+  display:-ms-flexbox; /* Internet Explorer 10 */
+  display:box;
+}
+#main-header .divider{
+  margin-left: 15px;
+  margin-right: 25px;
+  -moz-box-flex:5.0; /* Firefox */
+  -webkit-box-flex:5.0; /* Safari and Chrome */
+  -ms-flex:9.0; /* Internet Explorer 10 */
+  box-flex:9.0;
+  position: relative;
+}
+#main-header .divider:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  top: calc(50% - 2px);
+}
+#main-header .main-nav {
+}
+#main-header nav ul li:not(:last-child) {
+  margin-right: 25px;
+}
 #app img {
   margin: 0 auto;
   display: block;
 }
 #volentix-bg {
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   top: 0;
   left: 0;
 }
 #vtx-wheel {
-  position: relative;
+  position: absolute;
   max-width: 50vh;
   margin: 0 auto;
   top: 50%;
   transform: translateY(-50%);
+  left: 0;
+  right: 0;
 }
 #vtx-wheel svg {
   width: 100%;
@@ -77,25 +122,25 @@ img {
 .nodes {
   position: absolute;
 }
-.nodes:first-child,
-.nodes:nth-child(2) {
+.nodes:nth-of-type(2),
+.nodes:nth-of-type(3) {
   right: -160px;
 }
-.nodes:nth-child(3),
-.nodes:nth-child(4) {
+.nodes:nth-of-type(4),
+.nodes:nth-of-type(5) {
   left: -160px;
   text-align: right;
 }
-.nodes:first-child {
+.nodes:nth-of-type(2) {
   top: 23%;
 }
-.nodes:nth-child(2) {
+.nodes:nth-of-type(3) {
   bottom: 23%;
 }
-.nodes:nth-child(3) {
+.nodes:nth-of-type(4) {
   top: 23%;
 }
-.nodes:nth-child(4) {
+.nodes:nth-of-type(5) {
   bottom: 23%;
 }
 .nodes h2 {
@@ -125,17 +170,17 @@ img {
   font-size: 14px;
   left: -15px;
 }
-.nodes:first-child .node-content,
-.nodes:nth-child(3) .node-content {
+.nodes:nth-of-type(2) .node-content,
+.nodes:nth-of-type(4) .node-content {
   top: -120px;
 }
-.nodes:nth-child(3) .node-content,
-.nodes:nth-child(4) .node-content {
+.nodes:nth-of-type(4) .node-content,
+.nodes:nth-of-type(5) .node-content {
   left: auto;
   right: -15px;
 }
-.nodes:nth-child(3) h2:after,
-.nodes:nth-child(4) h2:after {
+.nodes:nth-of-type(4) h2:after,
+.nodes:nth-of-type(5) h2:after {
   left: auto;
   right: 0;
 }
@@ -180,4 +225,13 @@ img {
 	100% {
 		transform: translatey(5px);
 	}
+}
+footer {
+  padding-bottom: 60px;
+}
+footer #countdown {
+  font-size: 40px;
+  margin-bottom: 0;
+  letter-spacing: 5px;
+  font-family: 'ApexNew-Medium', Arial, sans-serif;
 }

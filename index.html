@@ -6,132 +6,127 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 		<link rel="stylesheet" href="library/src/fonts/style.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
-	<body>
-		<div id="volentix-bg"></div>
+	<body class="fullscreen flex-column d-flex align-items-stretch">
+		<header id="main-header" class="container-fluid clearfix">
+				<div class="main-logo">
+					<a href="#">
+						<img src="library/src/assets/logo_volentix.png" alt="Volentix">
+					</a>
+				</div>
+				<div class="divider"></div>
+				<nav class="main-nav">
+					<ul class="inline-list">
+						<li><a href="#video"><img src="library/src/assets/icon_play.png" alt="Video"></a></li>
+						<li><a href="#register"><img src="library/src/assets/icon_info.png" alt="Information"></a></li>
+					</ul>
+				</nav>
+		</header>
 
-		<div id="vtx-wheel">
-			<div id="vtx-logo">
-				<img src="library/src/assets/volentix-3d_logo.png" alt="">
-			</div>
-			<div id="vtx-text">
+		<main>
+			<div id="vtx-wheel">
+				<div id="vtx-logo">
+					<img src="library/src/assets/volentix-3d_logo.png" alt="">
+				</div>
 				<div class="nodes" id="vtx">
 					<h2>VTX</h2>
 					<div class="node-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p class="typewriter" data-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></p>
 						<a href="#" class="read-more">Read More</a>
 					</div>
 				</div>
 				<div class="nodes" id="vchain">
 					<h2>Vchain</h2>
-					<div class="node-content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<div class="node-content"><p class="typewriter" data-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></p>
 						<a href="#" class="read-more">Read More</a>
 					</div>
 				</div>
 				<div class="nodes" id="vesp">
 					<h2>vespucci</h2>
 					<div class="node-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p class="typewriter" data-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></p>
 						<a href="#" class="read-more">Read More</a>
 					</div>
 				</div>
 				<div class="nodes" id="vdex">
 					<h2>vdex</h2>
 					<div class="node-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p class="typewriter" data-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></p>
 						<a href="#" class="read-more">Read More</a>
 					</div>
 				</div>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 408 408">
+					<defs>
+						<filter id="sofGlow">
+							<feGaussianBlur in="thicken" stdDeviation="5" result="blurred" />
+							<feFlood flood-color="rgb(255,255,255)" result="glowColor" />
+							<feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />
+							<feMerge>
+								<feMergeNode in="softGlow_colored"/>
+								<feMergeNode in="SourceGraphic"/>
+							</feMerge>
+						</filter>
+					</defs>
+				  <g id="vtx" class="wheel-dot" mydata:node="vtx">
+				    <circle cx="387" cy="99" r="9" fill="#fff"/>
+				  </g>
+				  <g id="vchain" class="wheel-dot" mydata:node="vchain">
+				    <circle cx="387" cy="310" r="9" fill="#fff"/>
+				  </g>
+				  <g id="vespucci" class="wheel-dot" mydata:node="vdex">
+				    <circle cx="20" cy="310" r="9" fill="#fff"/>
+				  </g>
+				  <g id="vdex" class="wheel-dot" mydata:node="vesp">
+				    <circle cx="20" cy="99" r="9" fill="#fff"/>
+				  </g>
+				  <g id="circle-2" data-name="circle" filter="url(#sofGlow)">
+				    <path d="M8,204a194.8,194.8,0,0,1,15.4-76.3q3.4-8.1,7.5-15.7h-9a204.3,204.3,0,0,0,1,186H32A195.1,195.1,0,0,1,8,204Z" fill="#fff"/>
+				    <path d="M342.6,342.6A196.1,196.1,0,0,1,36.8,306.3l-4.7,7.6a204,204,0,0,0,343.1,1l-4.5-7.8A196.2,196.2,0,0,1,342.6,342.6Z" fill="#fff"/>
+				    <path d="M204,0A203.8,203.8,0,0,0,32.1,94.1l5.1,6.8a196.1,196.1,0,0,1,333.8.4l4.6-7.7A203.8,203.8,0,0,0,204,0Z" fill="#fff"/>
+				    <path d="M386.1,112h-9q4.1,7.7,7.5,15.7A195.8,195.8,0,0,1,376,298h9.1a204.3,204.3,0,0,0,1-186Z" fill="#fff"/>
+				  </g>
+				  <path id="left" d="M31,298a196.5,196.5,0,0,1-8.6-170.3q3.4-8.1,7.5-15.7" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
+				  <path id="bottom" d="M370.7,308.2a196.1,196.1,0,0,1-333.9-.8" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
+				  <path id="top" d="M37.2,100a196.1,196.1,0,0,1,333.8.4" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
+				  <path id="right" d="M378.1,112q4.1,7.7,7.5,15.7A195.8,195.8,0,0,1,377,298" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
+				</svg>
 			</div>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 408 408">
-				<defs>
-					<filter id="sofGlow">
-						<feGaussianBlur in="thicken" stdDeviation="5" result="blurred" />
-						<feFlood flood-color="rgb(255,255,255)" result="glowColor" />
-						<feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />
-						<feMerge>
-							<feMergeNode in="softGlow_colored"/>
-							<feMergeNode in="SourceGraphic"/>
-						</feMerge>
-					</filter>
-				</defs>
-			  <g id="vtx" class="wheel-dot" mydata:node="vtx">
-			    <circle cx="387" cy="99" r="9" fill="#fff"/>
-					<text x="400" y="105">vtx</text>
-			  </g>
-			  <g id="vchain" class="wheel-dot" mydata:node="vchain">
-			    <circle cx="387" cy="310" r="9" fill="#fff"/>
-					<text x="400" y="315">vchain</text>
-			  </g>
-			  <g id="vespucci" class="wheel-dot" mydata:node="vdex">
-			    <circle cx="20" cy="310" r="9" fill="#fff"/>
-					<!-- <text x="-30" y="315">vdex</text> -->
-			  </g>
-			  <g id="vdex" class="wheel-dot" mydata:node="vesp">
-			    <circle cx="20" cy="99" r="9" fill="#fff"/>
-					<!-- <text x="-55" y="105">vespucci</text> -->
-			  </g>
-			  <g id="circle-2" data-name="circle" filter="url(#sofGlow)">
-			    <path d="M8,204a194.8,194.8,0,0,1,15.4-76.3q3.4-8.1,7.5-15.7h-9a204.3,204.3,0,0,0,1,186H32A195.1,195.1,0,0,1,8,204Z" fill="#fff"/>
-			    <path d="M342.6,342.6A196.1,196.1,0,0,1,36.8,306.3l-4.7,7.6a204,204,0,0,0,343.1,1l-4.5-7.8A196.2,196.2,0,0,1,342.6,342.6Z" fill="#fff"/>
-			    <path d="M204,0A203.8,203.8,0,0,0,32.1,94.1l5.1,6.8a196.1,196.1,0,0,1,333.8.4l4.6-7.7A203.8,203.8,0,0,0,204,0Z" fill="#fff"/>
-			    <path d="M386.1,112h-9q4.1,7.7,7.5,15.7A195.8,195.8,0,0,1,376,298h9.1a204.3,204.3,0,0,0,1-186Z" fill="#fff"/>
-			  </g>
-			  <path id="left" d="M31,298a196.5,196.5,0,0,1-8.6-170.3q3.4-8.1,7.5-15.7" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
-			  <path id="bottom" d="M370.7,308.2a196.1,196.1,0,0,1-333.9-.8" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
-			  <path id="top" d="M37.2,100a196.1,196.1,0,0,1,333.8.4" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
-			  <path id="right" d="M378.1,112q4.1,7.7,7.5,15.7A195.8,195.8,0,0,1,377,298" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
-			</svg>
+		</main>
 
-		  <!-- <ul>
-		    <li v-for="user in users">{{ user.name }}</li>
-		  </ul>
+		<footer class="container text-center">
+			<p id="countdown">0D 0H 4M</p>
+		</footer>
+		<div id="volentix-bg"></div>
 
-			<label for="name">Name:</label>
-		  <input id="name" type="text" v-model.lazy="name" />
-		  <h3>{{ name }}</h3>
-
-			<button @click="active = !active" :aria-pressed="active ? 'true' : 'false'">Toggle me</button>
-  		<p :class="{ red: active }">Sometimes I need to be styled differently</p>
-
-			<button @click="show = !show" :aria-expanded="show ? 'true' : 'false'" type="button" name="button">Show Something</button>
-
-			<h1 v-show="show">Hello World</h1>
-
-			<form @submit.prevent="submitForm">
-		    <div>
-		      <label for="name">Name:</label><br>
-		      <input id="name" type="text" v-model="name" required/>
-		    </div>
-		    <div>
-		      <label for="email">Email:</label><br>
-		      <input id="email" type="email" v-model="email" required/>
-		    </div>
-		    <div>
-		      <label for="caps">HOW DO I TURN OFF CAPS LOCK:</label><br>
-		      <textarea id="caps" v-model="caps" required></textarea>
-		    </div>
-		    <button :class="[name ? activeClass : '']" type="submit">Submit</button>
-		    <div>
-		      <h3>Response from server:</h3>
-		      <pre>{{ response }}</pre>
-		    </div>
-		  </form> -->
-		</div>
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
 		<script src="js/three.js"></script>
-
 		<script src="js/three/renderers/Projector.js"></script>
 		<script src="js/three/renderers/SVGRenderer.js"></script>
-		<script src="js/three/renderers/CanvasRenderer.js"></script> -->
-
-		<script src="js/anime.min.js" charset="utf-8"></script>
-		<script src="js/snap.svg-min.js" charset="utf-8"></script>
+		<script src="js/three/renderers/CanvasRenderer.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="js/custom.js" charset="utf-8"></script>
-		<script src="js/canvas.js" charset="utf-8"></script>
+
+		<script>
+			var countDownDate = new Date("Apr 12, 2018 23:00:00").getTime();
+
+			var x = setInterval(function() {
+			  var now = new Date().getTime();
+			  var distance = countDownDate - now;
+			  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			  document.getElementById("countdown").innerHTML = days + "D " + hours + "H "
+			  + minutes + "M";
+			  if (distance < 0) {
+			    clearInterval(x);
+			    document.getElementById("countdown").innerHTML = "EXPIRED";
+			  }
+			}, 1000);
+		</script>
 	</body>
 </html>
