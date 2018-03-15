@@ -77,88 +77,67 @@ $(function(){
   });
 });
 
-var SEPARATION = 50, AMOUNTX = 100, AMOUNTY = 50;
-var container, stats;
-var camera, scene, renderer;
-var particles, particle, count = 0;
-var windowHalfX = window.innerWidth / 2;
-var windowHalfY = window.innerHeight / 2;
+var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera(75,
+	window.innerWidth/window.innerHeight, 0.1, 10000);
+var renderer = new THREE.WebGLRenderer();
+renderer.setClearColor(0x17293a);
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.getElementById('volentix-bg').appendChild(renderer.domElement);
+var mouse = new THREE.Vector3();
 
-init();
-animate();
+var planeGeometry = new THREE.PlaneGeometry(200, 100, 50, 50);
+var planeMaterial = new THREE.MeshLambertMaterial({color: 0xEF3523, wireframe: true});
+var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+plane.geometry.dynamic = true;
+plane.position.set(0, 0, 0);
+plane.rotation.x = -0.5 * Math.PI;
+scene.add(plane);
+camera.position.set(0, 90, 100);
+camera.lookAt(scene.position);
 
-function init() {
-  container = document.getElementById('volentix-bg');
-  document.body.appendChild( container );
+var raycaster = new THREE.Raycaster();
 
-  camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
-  camera.position.z = 1000;
-  scene = new THREE.Scene();
+var checkMousePos = function() {
+  mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+  mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+  raycaster.setFromCamera( mouse, camera );
+  var intersects = raycaster.intersectObjects( scene.children );
+  console.log(intersects.length);
+  if (intersects.length > 0) {
+    var wave = {};
+    wave.x = intersects[0].point.x;
+    wave.y = intersects[0].point.y;
+    wave.z = intersects[0].point.z;
+    drawWave(wave);
+  }
+};
 
-  planet1 = new THREE.Group();
-	scene.add( planet1 );
+drawWave = function(wave){
+  var center = new THREE.Vector3(wave.x, -wave.z, wave.y);
+  var anim = function(ts) {
+    requestAnimationFrame(anim);
+    var vLength = plane.geometry.vertices.length;
+    for (var i = 0; i < vLength; i++) {
+      var v = plane.geometry.vertices[i];
+      var dist = new THREE.Vector3(v.x, v.y, v.z).sub(center);
+      var size = 5.0;
+      var magnitude = 4;
+      v.z = Math.sin(dist.length()/-size + (ts/500)) * magnitude;
+    }
+    plane.geometry.verticesNeedUpdate = true;
+    renderer.render(scene, camera);
+  }
+  anim();
+};
 
-  // earth
-	var loader = new THREE.TextureLoader();
-	loader.load( 'textures/land_ocean_ice_cloud_2048.png', function ( texture ) {
-		var geometry = new THREE.SphereGeometry( 600, 20, 20 );
-		var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
-		var mesh = new THREE.Mesh( geometry, material );
-		planet1.add( mesh );
-	} );
+$(document).on('click', function(e) {
+  checkMousePos();
+});
 
-  var planeGeometry = new THREE.PlaneGeometry(100, 100, 20, 20);
-  var planeMaterial = new THREE.MeshBasicMaterial({color: 0x1d2430, side: THREE.DoubleSide});
-  var plane = new THREE.Mesh(planeGeometry, planeMaterial);
 
-  plane.position.set(0, 0, 0);
-
-  scene.add(plane);
-
-  var geo = new THREE.WireframeGeometry( plane.geometry );
-  var mat = new THREE.LineBasicMaterial( { color: 0x000000, linewidth: 3 } );
-  var wireframe = new THREE.LineSegments( geo, mat );
-  plane.add( wireframe );
-
-  renderer = new THREE.WebGLRenderer( { alpha: true } );
-
-  renderer.setClearColor( 0x000000, 0 );
-  renderer.setPixelRatio( window.devicePixelRatio );
-  renderer.setSize( window.innerWidth, window.innerHeight );
-  container.appendChild( renderer.domElement );
-
-  window.addEventListener( 'resize', onWindowResize, false );
-}
-function onWindowResize() {
-  windowHalfX = window.innerWidth / 2;
-  windowHalfY = window.innerHeight / 2;
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize( window.innerWidth, window.innerHeight );
-}
-function animate() {
-  requestAnimationFrame( animate );
-  render();
-}
-function render() {
-
-  //Render Camers
-  camera.position.x = 0;
-  camera.position.y = 90;
-  camera.position.z = 100;
-  camera.lookAt( scene.position );
-
-  //Render Planet
-  planet1.position.z = -1000;
-  planet1.position.x = 1000;
-
-  //Rotate Planet
-  scene.traverse( function( planet1 ) {
-		if ( planet1.isMesh === true ) {
-			planet1.rotation.x -= 0.0001;
-			planet1.rotation.y -= 0.0001;
-		}
-	});
-
-  renderer.render( scene, camera );
-}
+var render = function() {
+  requestAnimationFrame(render);
+  renderer.render(scene, camera);
+};
+render();
