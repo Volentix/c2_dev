@@ -12,6 +12,15 @@ body {
   height: 100%;
   font-family: 'apex_sanslight', Arial, sans-serif;
 }
+#myVideo {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
 a {
   color:#0078ff;
 }
@@ -269,12 +278,12 @@ svg#filter {
 }
 @keyframes offset3 {
   100% {
-    stroke-dashoffset: 194;
+    stroke-dashoffset: 354;
   }
 }
 @keyframes offset4 {
   100% {
-    stroke-dashoffset: 400;
+    stroke-dashoffset: 561;
   }
 }
 @keyframes float {
@@ -393,5 +402,5 @@ footer #countdown {
     width: 90%;
     max-width: 400px;
   }
-  #volentix-bg {display: none;}
+  #myVideo {display: none;}
 }

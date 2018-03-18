@@ -48,7 +48,7 @@ $(function(){
         animateEl.addClass(direction, setTimeout(function(){
           animateEl.removeClass(direction)
           animateEl.siblings().removeClass(direction)
-        },510));
+        },610));
 
         $('#vtx-wheel .wheel-dot').children('circle').css('fill', '#ffffff');
         $(this).children('circle').css('fill', '#cf7532');
