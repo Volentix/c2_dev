@@ -30,7 +30,7 @@
 		<main>
 			<div id="vtx-wheel">
 				<div id="vtx-logo">
-					<img src="library/src/assets/volentix-3d_logo.png" alt="">
+					<!-- <img src="library/src/assets/volentix-3d_logo.png" alt=""> -->
 				</div>
 				<div class="nodes" id="vtx">
 					<h2>VTX</h2>
@@ -83,10 +83,10 @@
 				    <path d="M204,0A203.8,203.8,0,0,0,32.1,94.1l5.1,6.8a196.1,196.1,0,0,1,333.8.4l4.6-7.7A203.8,203.8,0,0,0,204,0Z" fill="#fff"/>
 				    <path d="M386.1,112h-9q4.1,7.7,7.5,15.7A195.8,195.8,0,0,1,376,298h9.1a204.3,204.3,0,0,0,1-186Z" fill="#fff"/>
 				  </g>
-				  <path id="left" class="light-beam" d="M31,298a196.5,196.5,0,0,1-8.6-170.3q3.4-8.1,7.5-15.7" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
-				  <path id="bottom" class="light-beam" d="M370.7,308.2a196.1,196.1,0,0,1-333.9-.8" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
-				  <path id="top" class="light-beam" d="M37.2,100a196.1,196.1,0,0,1,333.8.4" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
-				  <path id="right" class="light-beam" d="M378.1,112q4.1,7.7,7.5,15.7A195.8,195.8,0,0,1,377,298" fill="none" stroke="#cf7532" stroke-linejoin="round" stroke-width="2"/>
+				  <path id="left" class="light-beam" d="M31,298a196.5,196.5,0,0,1-8.6-170.3q3.4-8.1,7.5-15.7" fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-width="3"/>
+				  <path id="bottom" class="light-beam" d="M370.7,308.2a196.1,196.1,0,0,1-333.9-.8" fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-width="3"/>
+				  <path id="top" class="light-beam" d="M37.2,100a196.1,196.1,0,0,1,333.8.4" fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-width="3"/>
+				  <path id="right" class="light-beam" d="M378.1,112q4.1,7.7,7.5,15.7A195.8,195.8,0,0,1,377,298" fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-width="3"/>
 				</svg>
 			</div>
 		</main>
@@ -104,12 +104,15 @@
 		        <feMergeNode in="SourceGraphic"/>
 			    </feMerge>
 				</filter>
-				<filter id="beam">
-			    <feGaussianBlur stdDeviation="25" result="coloredBlur"/>
-			    <feMerge>
-		        <feMergeNode in="coloredBlur"/>
-		        <feMergeNode in="SourceGraphic"/>
-			    </feMerge>
+				<filter id="sofGlow" height="300%" width="300%" x="-75%" y="-75%">
+					<feMorphology operator="dilate" radius="4" in="SourceAlpha" result="thicken" />>
+					<feGaussianBlur in="thicken" stdDeviation="10" result="blurred" />
+					<feFlood flood-color="rgb(207, 117, 50)" result="glowColor" />
+					<feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />
+					<feMerge>
+						<feMergeNode in="softGlow_colored"/>
+						<feMergeNode in="SourceGraphic"/>
+					</feMerge>
 				</filter>
 			</defs>
 		</svg>

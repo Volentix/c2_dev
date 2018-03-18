@@ -107,29 +107,35 @@ svg#filter {
 #vtx-wheel #right,
 #vtx-wheel #top,
 #vtx-wheel #bottom {
-  opacity: 0;
-  stroke-dasharray: 1024;
-  stroke-dashoffset: 1024px;
-  opacity: 1;
-  filter: url('#beam');
-  -webkit-filter: url('#beam');
+  stroke-dasharray: 80 194 ;
+  stroke-dashoffset: 80;
+  filter: url('#sofGlow');
+  -webkit-filter: url('#sofGlow');
+}
+
+#vtx-wheel #top,
+#vtx-wheel #bottom {
+  stroke-dasharray: 80 400 ;
+  stroke-dashoffset: 80;
 }
 #vtx-wheel #left.cwise ,
-#vtx-wheel #right.cwise  {
-  animation: offset 0.5s linear forwards;
+#vtx-wheel #right.cwise {
+  animation: offset .5s linear forwards;
 }
 #vtx-wheel #top.cwise ,
-#vtx-wheel #bottom.cwise  {
-  animation: offset 0.5s linear forwards;
+#vtx-wheel #bottom.cwise {
+  animation: offset2 .5s linear forwards;
 }
+
 #vtx-wheel #left.ccwise ,
-#vtx-wheel #right.ccwise  {
-  animation: offset 0.5s linear reverse;
+#vtx-wheel #right.ccwise {
+  animation: offset3 .5s linear forwards;
 }
 #vtx-wheel #top.ccwise ,
-#vtx-wheel #bottom.ccwise  {
-  animation: offset 0.5s linear reverse;
+#vtx-wheel #bottom.ccwise {
+  animation: offset4 .5s linear forwards;
 }
+
 #vtx-wheel #vtx-logo,
 #vtx-wheel #vtx-text {
   position: absolute;
@@ -252,9 +258,24 @@ svg#filter {
   display: block;
 }
 @keyframes offset {
-	100% {
-		stroke-dashoffset: -1000;
-	}
+  100% {
+    stroke-dashoffset: -194;
+  }
+}
+@keyframes offset2 {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+@keyframes offset3 {
+  100% {
+    stroke-dashoffset: 194;
+  }
+}
+@keyframes offset4 {
+  100% {
+    stroke-dashoffset: 400;
+  }
 }
 @keyframes float {
 	0% {
