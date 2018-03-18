@@ -104,7 +104,6 @@ svg#filter {
   width: 100%;
   padding: 30px;
   box-sizing: border-box;
-  height: 100%;
   min-height: 60vh;
 }
 #vtx-wheel svg g#circle-2,
@@ -330,7 +329,9 @@ footer #countdown {
   .nodes .node-content {
     width: 250px;
   }
-
+  #vtx-wheel svg {
+    min-height: 0;
+  }
 }
 @media screen and (max-width:767px) {
   body.active {
@@ -352,6 +353,9 @@ footer #countdown {
   }
   #vtx-wheel #vtx-logo {
     width: calc(75% - 100px);
+  }
+  #vtx-wheel svg {
+    padding: 0 60px;
   }
   .nodes:nth-of-type(2),
   .nodes:nth-of-type(4) {
