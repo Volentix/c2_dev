@@ -4,9 +4,9 @@
 		<ul>
 			{% assign current = page.url | downcase | split: '/' %}
 			<li {% if current[1] == 'index.html' %}class='current'{% endif %}><a href="/index.html">Homepage</a></li>
+			<li {% if current[1] == 'blog' %}class='current'{% endif %}><a href="/blog">Announcements</a></li>
 			<li {% if current[1] == 'legal/privacy-policy.html' %}class='current'{% endif %}><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
-			<li {% if current[1] == 'legal/terms-and-conditions.html' %}class='current'{% endif %}><a href="/legal/terms-and-conditions.html">Terms And Conditions</a></li>
-			
-					</ul>
+			<li {% if current[1] == 'legal/terms-and-conditions.html' %}class='current'{% endif %}><a href="/legal/terms-and-conditions.html">Terms And Conditions</a></li>	
+		</ul>
 	</nav>
 </div>
