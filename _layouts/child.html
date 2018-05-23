@@ -36,54 +36,21 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 
 	<!-- Header -->
 	<div id="header">
-		<div id="nav-wrapper">
-	<!-- Nav -->
-	<nav id="nav">
-		<ul>
-			
-			<li ><a href="/index.html">Homepage</a></li>
-			<li ><a href="/blog">Announcements</a></li>
-			<li ><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
-			<li ><a href="/legal/contact.html">Contact</a></li>	
-		</ul>
-	</nav>
-</div>
+		{% include nav.html %}
 		<div class="container">
 
 			<!-- Logo -->
 			<div id="logo">
 				<br/>
 				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
 				<a href="#"><img src="/assets/images/logo.png" alt="" width="600"></a>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
 				<br/>
 				<br/>
 			</div>
 		</div>
 	</div>
 	<!-- Header -->
-	<!-- Main -->
-	<div id="featured">
-		<div id="content" class="container">
-            <header>
-                <h2>Terms And Conditions</h2>
-            </header>
-		</div>
-	</div>
-
+	{{ content }}
 	
 	<!-- Tweet -->
 	<div id="tweet">
