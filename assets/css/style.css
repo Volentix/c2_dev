@@ -12,6 +12,15 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
+	.chevron-down {
+		fill: #FFF;
+		margin: auto;
+		width: 5em;
+		height: 5em;
+		animation: hover-me .5s infinite ease-in-out alternate; 
+	}
+  
+
 	body
 	{
 		margin: 0;

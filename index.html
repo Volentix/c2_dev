@@ -1,14 +1,16 @@
 ---
-title: Linear
-layout: default
+layout: child
+language: en
+permalink: /
+navigation: false
 ---
 <!-- Featured -->
 <div id="featured">
 	<div class="container">
 		<header>
-			<h2>Welcome to Volentix</h2>
+			<h2>{{title}}</h2>
 		</header>
-		<p>Some Text</p>
+		<p>{{description}}</p>
 		<iframe width="420" height="315"
 			src="https://www.youtube.com/embed/7NEAv3ihxJc" allowfullscreen>
 		</iframe>
@@ -19,7 +21,7 @@ layout: default
 			</section>
 			<section class="4u">
 					<form class="w3-container">
-						<label>Email</label>
+						<label>{{email}}</label>
 						<input class="w3-input w3-border w3-round" type="text">
 						<br/>
 						<p><button style="background-color: #232C3B; color: white; border: 2px solid white"class="w3-button w3-round-large">Sign Up</button></p>
@@ -36,12 +38,12 @@ layout: default
 				<span class="pennant"><img src="/assets/images/venue.png" style="border-radius: 50%;" alt=""></span></span>
 
 				<h3>Venue</h3>
-				<p>With Venue, a bounty distribution platform, Volentix development network members will post bounties and campaigns to Venue for work needed—for example, fixing bugs, creating content, or promoting Volentix—and anyone may claim a bounty in exchange for their efforts. Venue provides real time metrics on VTX rewards earned by participants and incentivizes the adoption of VTX.</p>
+				<p>{{venue_desc}}</p>
 			</section>
 			<section class="6u">
 					<span class="pennant"><img src="/assets/images/vdex.png" style="border-radius: 50%;" alt=""></span></span>
 				<h3>VDex</h3>
-				<p>VDex will be an extensible, customizable, decentralized cryptocurrency exchange platform which does not possess users’ information or assets. VDex will use several protocols to facilitate cross-blockchain exchange. Users of the VDex will always maintain custody of their funds in their own virtual wallets.</p>
+				<p>{{vdex_desc}}</p>
 			</section>
 		</div>
 		<br/>
@@ -49,16 +51,27 @@ layout: default
 			<section class="6u">
 					<span class="pennant"><img src="/assets/images/vespucci.png" style="border-radius: 50%;" alt=""></span></span>
 				<h3>Vespucci</h3>
-				<p>Vespucci will be an Automated Analytical Engine which researches all available information and indicators related to tradeable digital assets and provides a risk assessment score based on a sophisticated matrix of data. These metrics are visualized as widgets that can be embedded in any site which desires transparent analysis of cryptocurrencies.</p>
+				<p>{{vespucci_desc}}</p>
 			</section>
 			<section class="6u">
 					<span class="pennant"><img src="/assets/images/verto.png" style="border-radius: 50%;" alt=""></span></span>
 				<h3>Verto</h3>
-				<p>Verto will be a next-generation, multi-currency wallet which integrates features from other Volentix pillars. Features functions for trading, staking, signature verification, and secure storage. Private keys are maintained in this wallet and are accessible only by its owner.</p>
+				<p>{{verto_desc}}</p>
 			</section>
 		</div>
 	</div>
 </div>
+<script id="site-languages-json" type="application/json">
+	{
+	
+	  "en": "/en/"
+	  ,
+	
+	  "de": "/de/"
+	  
+	
+	}
+	</script>
 
 <!-- Main 
 	<div id="main">

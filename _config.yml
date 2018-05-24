@@ -1,3 +1,18 @@
-name: Linear
-description: Linear template for Jekyll
-paginate: 10
+# Site meta data
+email: example@example.org
+url: "http://example.org"
+
+
+baseurl: "/"
+
+plugins:
+  - jekyll-polyglot
+
+# not used by plugin but by liquid template
+languages:          ['en']
+default_lang: "en"
+parallel_localization: true
+
+language_data: data.lang.%%
+language_includes_dir: _i18n
+

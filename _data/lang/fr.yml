@@ -1,0 +1,44 @@
+global:
+  tagline: French
+  about: About
+langs:
+  en: French
+pages:
+  title: (FR) Welcome to Volentix
+  description: (FR) Description to be placed here
+  email: (FR) Email
+  venue_desc: (FR) With Venue, a bounty distribution platform, Volentix development network members will post bounties and campaigns to Venue for work needed—for example, fixing bugs, creating content, or promoting Volentix—and anyone may claim a bounty in exchange for their efforts. Venue provides real time metrics on VTX rewards earned by participants and incentivizes the adoption of VTX.
+  vdex_desc: (FR) VDex will be an extensible, customizable, decentralized cryptocurrency exchange platform which does not possess users’ information or assets. VDex will use several protocols to facilitate cross-blockchain exchange. Users of the VDex will always maintain custody of their funds in their own virtual wallets.
+  vespucci_desc: (FR) Vespucci will be an Automated Analytical Engine which researches all available information and indicators related to tradeable digital assets and provides a risk assessment score based on a sophisticated matrix of data. These metrics are visualized as widgets that can be embedded in any site which desires transparent analysis of cryptocurrencies.
+  verto_desc: (FR) Verto will be a next-generation, multi-currency wallet which integrates features from other Volentix pillars. Features functions for trading, staking, signature verification, and secure storage. Private keys are maintained in this wallet and are accessible only by its owner.
+footer:
+  title: (FR) Get In Touch
+titles:
+  pagination: (FR) Pagination
+links:
+  home: (FR) Home
+  announcements: (FR) Announcements
+  privacy_policy: (FR) Privacy Policy
+  contact: (FR) Contact
+contact:
+  header: (FR)Contact
+  intro: (FR)If you have questions about our platform or are just interested in a discussion about our technology, please email us at. admin@volentixlabs.com
+offices:
+  montreal:
+    name: (FR)Montreal
+    line1: (FR)St. Laurent
+    line2: (FR)Mo, QC
+    line3: (FR)Canada
+  greece:
+    name: (FR)Greece
+    line1: (FR)Street
+    line2: (FR)City, Province
+    line3: (FR)Territory
+  ukraine:
+    name: (FR)Ukraine
+    line1: (FR)Street
+    line2: (FR)City, Province
+    line3: (FR)Territory
+lang:
+  en: English
+  fr: French

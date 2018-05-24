@@ -1,0 +1,145 @@
+---
+layout: default
+language: en
+subset: footer
+permalink: /
+navigation: false
+---
+
+<!DOCTYPE HTML>
+<!--
+Linear by TEMPLATED
+templated.co @templatedco
+Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<head>
+	<head lang="en">
+	<title>Volentix</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="/assets/js/skel.min.js"></script>
+	<script src="/assets/js/skel-panels.min.js"></script>
+	<script src="/assets/js/init.js"></script>
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/skel-noscript.css" />
+		<link rel="stylesheet" href="/assets/css/style.css" />
+		<link rel="stylesheet" href="/assets/css/style-desktop.css" />
+	</noscript>
+	<link rel="apple-touch-icon" sizes="180x180" href="fav_icon/apple-touch-icon.png?v=RyMydNwazz">
+	<link rel="icon" type="image/png" sizes="32x32" href="fav_icon/favicon-32x32.png?v=RyMydNwazz">
+	<link rel="icon" type="image/png" sizes="16x16" href="fav_icon/favicon-16x16.png?v=RyMydNwazz">
+	<link rel="manifest" href="fav_icon/manifest.json?v=RyMydNwazz">
+	<link rel="mask-icon" href="fav_icon/safari-pinned-tab.svg?v=RyMydNwazz" color="#232c3b">
+	<link rel="shortcut icon" href="fav_icon/favicon.ico?v=RyMydNwazz">
+	<meta name="apple-mobile-web-app-title" content="Volentix">
+	<meta name="application-name" content="Volentix">
+	<meta name="msapplication-config" content="fav_icon/browserconfig.xml?v=RyMydNwazz">
+</head>
+<body>
+
+	<!-- Header -->
+	<div id="header">
+		{% include nav.html %}
+		<div class="container">
+
+			<!-- Logo -->
+			<div id="logo">
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<a href="#"><img src="/assets/images/logo.png" alt="" width="600"></a>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<svg viewBox="0 0 68 33" class="chevron-down">
+						<path d="M.58 3.414l27.432 27.433c2.715 2.715 7.167 2.787 9.964.164L67.356 3.46 64.62.54 35.24 28.093c-1.222 1.146-3.212 1.114-4.4-.075L3.408.586.579 3.414z"></path>
+			  </svg>
+			 
+			</div>
+		</div>
+	</div>
+	<!-- Header -->
+	{{ content }}
+	
+	<!-- Tweet -->
+	<div id="tweet">
+		<div class="container">
+			<section>
+				<blockquote>&ldquo;Concern for man and his fate must always form the chief interest of all technical endeavors. Never forget this in the midst of your diagrams and equations.&rdquo;</blockquote>
+			</section>
+		</div>
+	</div>
+
+
+<!-- Footer -->
+<div id="footer">
+	<div class="container">
+		<section>
+			<header>
+				<h2>{% t 'title' %}</h2>
+			</header>
+			<ul class="contact">
+				<li><a href="https://github.com/Volentix" class="fa fa-github"><span>Twitter</span></a></li>
+				<li><a href="https://t.me/volentix" class="fab fa-telegram"><img src="/assets/images/telegram.svg" alt="" width="30"></a></li>
+				<li><a href="https://twitter.com/Volentix" class="fa fa-twitter"><span>Twitter</span></a></li>
+			</ul>
+		</section>
+	</div>
+</div>
+
+<!-- Copyright -->
+<div id="copyright">
+	<div class="container">
+		 &copy; 2018 Volentix Labs, Montreal, QC. TODO: POSTAL CODE
+	</div>
+</div>
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+		
+		// Find the distance between now an the count down date
+		var distance = countDownDate - now;
+		
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		
+		// Output the result in an element with id="demo"
+		document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+		
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+</body>
+</html>

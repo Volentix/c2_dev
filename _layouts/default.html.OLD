@@ -1,0 +1,75 @@
+---
+layout: skeleton
+---
+	<!-- Header 
+	<div id="header">
+		 {% include nav.html %} 
+		<div class="container">
+
+			<!-- Logo 
+			<div id="logo">
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<a href="#"><img src="/assets/images/logo.png" alt="" width="600"></a>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<svg viewBox="0 0 68 33" class="chevron-down">
+						<path d="M.58 3.414l27.432 27.433c2.715 2.715 7.167 2.787 9.964.164L67.356 3.46 64.62.54 35.24 28.093c-1.222 1.146-3.212 1.114-4.4-.075L3.408.586.579 3.414z"></path>
+			  </svg>
+			 
+			</div>
+			
+		</div>
+	</div>
+-->
+	<!-- Header 
+	{{ content }}
+	-->
+	<!-- Tweet 
+	<div id="tweet">
+		<div class="container">
+			<section>
+				<blockquote>&ldquo;Concern for man and his fate must always form the chief interest of all technical endeavors. Never forget this in the midst of your diagrams and equations.&rdquo;</blockquote>
+			</section>
+		</div>
+	</div>
+	-->
+
+
+<!-- Footer 
+<div id="footer">
+	<div class="container">
+		<section>
+			<header>
+				 <h2>{% t 'title' %}</h2> 
+			</header>
+			<ul class="contact">
+				<li><a href="https://github.com/Volentix" class="fa fa-github"><span>Twitter</span></a></li>
+				<li><a href="https://t.me/volentix" class="fab fa-telegram"><img src="/assets/images/telegram.svg" alt="" width="30"></a></li>
+				<li><a href="https://twitter.com/Volentix" class="fa fa-twitter"><span>Twitter</span></a></li>
+			</ul>
+		</section>
+	</div>
+</div>
+-->
+
+<!-- Copyright 
+<div id="copyright">
+	<div class="container">
+		 &copy; 2018 Volentix Labs, Montreal, QC. TODO: POSTAL CODE
+	</div>
+</div>
+
+-->

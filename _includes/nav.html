@@ -3,10 +3,10 @@
 	<nav id="nav">
 		<ul>
 			{% assign current = page.url | downcase | split: '/' %}
-			<li {% if current[1] == 'index.html' %}class='current'{% endif %}><a href="/index.html">Homepage</a></li>
-			<li {% if current[1] == 'blog' %}class='current'{% endif %}><a href="/blog">Announcements</a></li>
-			<li {% if current[1] == 'legal/privacy-policy.html' %}class='current'{% endif %}><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
-			<li {% if current[1] == 'legal/contact.html' %}class='current'{% endif %}><a href="/legal/contact.html">Contact</a></li>	
+			<li {% if current[1] == 'index.html' %}class='current'{% endif %}><a href="/index.html">{{contact.links.home}}</a></li>
+			<li {% if current[1] == 'blog' %}class='current'{% endif %}><a href="/blog">{{links.announcements}}</a></li>
+			<li {% if current[1] == 'legal/privacy-policy.html' %}class='current'{% endif %}><a href="/legal/privacy-policy.html">{{links.privacy_policy}}</a></li>
+			<li {% if current[1] == 'legal/contact.html' %}class='current'{% endif %}><a href="/legal/contact.html">{{links.contact}}</a></li>	
 		</ul>
 	</nav>
 </div>

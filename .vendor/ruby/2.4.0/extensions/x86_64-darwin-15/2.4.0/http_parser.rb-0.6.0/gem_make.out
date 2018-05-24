@@ -1,0 +1,16 @@
+current directory: /Users/caro/rhys/website/.vendor/ruby/2.4.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+/Users/caro/.rvm/rubies/ruby-2.4.2/bin/ruby -r ./siteconf20180523-57113-1dinnv6.rb extconf.rb
+creating Makefile
+
+current directory: /Users/caro/rhys/website/.vendor/ruby/2.4.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make "DESTDIR=" clean
+
+current directory: /Users/caro/rhys/website/.vendor/ruby/2.4.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make "DESTDIR="
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.bundle
+
+current directory: /Users/caro/rhys/website/.vendor/ruby/2.4.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 ruby_http_parser.bundle ./.gem.20180523-57113-8xr0kn
